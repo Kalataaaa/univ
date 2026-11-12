@@ -1,15 +1,27 @@
 #include <iostream>
 
-int addingDigits(int n) {
-    if (n == 0) {
-        return 0;
+long long localMax(long long n){
+int count = 0;
+long long firstNumber = 0;
+long long secondNumber = 0;
+long long thirdNumber = 0;
+for (long long i=0;i<n;i++){
+    std::cin >> firstNumber;
+    std::cin >> secondNumber;
+    std::cin >> thirdNumber;
+    if(firstNumber > secondNumber && firstNumber > thirdNumber){
+        count++;
     }
-    return n % 10 + addingDigits(n / 10);
 }
+
+
+return count;
+}
+
 int main() {
-    int number;
-    std::cout << "Enter a number: ";
-    std::cin >> number;
-    std::cout << "Sum of digits: " << addingDigits(number) << std::endl;
+    long long n;
+    std::cout << "Enter N: ";
+    std::cin >> n;
+    std::cout << "Count of local maximums: " << localMax(n) << std::endl;
     return 0;
 }
